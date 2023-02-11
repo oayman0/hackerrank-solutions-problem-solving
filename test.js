@@ -1,50 +1,33 @@
+// Task 1
+var dairy = ['cheese', 'sour cream', 'milk', 'yogurt', 'ice cream', 'milkshake']
+function logDairy(){
+    for(var item of dairy){
+        console.log(item)
+    }
+}
+logDairy()
+// Task 2
+const animal = {
+canJump: true
+};
 
-// console.log(b)
-//     for (var i=b[0];i>=a[-1];i--){
+const bird = Object.create(animal);
 
+bird.canFly = true;
 
-    function getTotalX(a, b) {
-    a=a.sort((a,b)=>{return b-a})
-    console.log(a)
-    b=b.sort((a,b)=>{return b-a})
-        var arr=[];
-        var final=0;
-        for( var lg of b){
-        for (sm of a){
-            arr.push(lg/sm);
-            arr.push(sm)
-        }
-        arr.push(lg)}
-        console.log(arr)
-        
-        var set1={}
-        for (var z of arr){
-            if(!set1[z]){
-                set1[z]=true
-            }
-        }
-        console.log(set1)
-        for( var setElem in set1){
-        var countA=0
-        var countB=0
-        for(var sm of a){
-            if(setElem%sm==0){
-        countA++
-            }
-        }
-        for(var lg of b){
-            if(lg%setElem==0){
-        countB++
-            }
-        }
-        console.log(countA,countB)
-        if (countA===a.length && countB===b.length){
-        final++
-        }
-        }
-        console.log(final)
-        return final
-        }//end of function
-        var a= [1]
-        var b= [72,48]
-        getTotalX(a,b);
+bird.hasFeathers = true;
+function birdCan(){
+    for(var prop of Object.keys(bird)){
+        console.log(`${prop}: ${bird[prop]}`)
+    }
+}
+birdCan()
+
+// Task 3
+function animalCan(){
+    for(var prop in bird){
+        console.log(`${prop}: ${bird[prop]}`)
+    }
+}
+animalCan()
+
