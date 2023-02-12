@@ -1,33 +1,14 @@
-// Task 1
-var dairy = ['cheese', 'sour cream', 'milk', 'yogurt', 'ice cream', 'milkshake']
-function logDairy(){
-    for(var item of dairy){
-        console.log(item)
+function camelcase(s) {
+    // Write your code here
+    var count=1
+    for(var i=0;i<s.length;i++){
+        console.log("a">50)
+        if(s[i]<65+25){
+            count++
+        }
+       
     }
+     console.log(count);
 }
-logDairy()
-// Task 2
-const animal = {
-canJump: true
-};
 
-const bird = Object.create(animal);
-
-bird.canFly = true;
-
-bird.hasFeathers = true;
-function birdCan(){
-    for(var prop of Object.keys(bird)){
-        console.log(`${prop}: ${bird[prop]}`)
-    }
-}
-birdCan()
-
-// Task 3
-function animalCan(){
-    for(var prop in bird){
-        console.log(`${prop}: ${bird[prop]}`)
-    }
-}
-animalCan()
-
+camelcase("aaAaaAaa")
