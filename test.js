@@ -1,72 +1,61 @@
-'use strict';
+// FAILED Test Case: getPrices method applies tax when taxBoolean parameter is true
+// Your Code Produced:
+// Dish:  Italian pasta Price: $ 11.46\nDish:  Rice with veggies Price: $ 10.38\nDish:  Chicken with potatoes Price: $ 18.66\nDish:  Vegetarian Pizza Price: $ 7.74\nExpected Output Is:
+// Dish: Italian pasta Price: $11.46
+// Dish: Rice with veggies Price: $10.38
+// Dish: Chicken with potatoes Price: $18.66
+// Dish: Vegetarian Pizza Price: $7.74
 
-const fs = require('fs');
+// FAILED Test Case: getPrices method does not apply tax when taxBoolean parameter is false
+// Your Code Produced:
+// Dish:  Italian pasta Price: $ 9.55\nDish:  Rice with veggies Price: $ 8.65\nDish:  Chicken with potatoes Price: $ 15.55\nDish:  Vegetarian Pizza Price: $ 6.45\nExpected Output Is:
+// Dish: Italian pasta Price: $9.55
+// Dish: Rice with veggies Price: $8.65
+// Dish: Chicken with potatoes Price: $15.55
+// Dish: Vegetarian Pizza Price: $6.45
 
-process.stdin.resume();
-process.stdin.setEncoding('utf-8');
+// Passed: getPrices method logs expected error message when taxBoolean is not supplied
+// FAILED Test Case: getDiscount method when tax is applied and guests less than 5
+// Your Code Produced:
+// Dish:  Italian pasta Price: $ 11.46\nDish:  Rice with veggies Price: $ 10.38\nDish:  Chicken with potatoes Price: $ 18.66\nDish:  Vegetarian Pizza Price: $ 7.74\nDiscount is: $5\nExpected Output Is:
+// Dish: Italian pasta Price: $11.46
+// Dish: Rice with veggies Price: $10.38
+// Dish: Chicken with potatoes Price: $18.66
+// Dish: Vegetarian Pizza Price: $7.74
+// Discount is: $5
 
-let inputString = '';
-let currentLine = 0;
+// FAILED Test Case: getDiscount method when tax is applied and guests more than 5
+// Your Code Produced:
+// Dish:  Italian pasta Price: $ 11.46\nDish:  Rice with veggies Price: $ 10.38\nDish:  Chicken with potatoes Price: $ 18.66\nDish:  Vegetarian Pizza Price: $ 7.74\nDiscount is: $10\nExpected Output Is:
+// Dish: Italian pasta Price: $11.46
+// Dish: Rice with veggies Price: $10.38
+// Dish: Chicken with potatoes Price: $18.66
+// Dish: Vegetarian Pizza Price: $7.74
+// Discount is: $10
 
-process.stdin.on('data', function(inputStdin) {
-    inputString += inputStdin;
-});
+// FAILED Test Case: getDiscount method when tax is not applied and guests less than 5
+// Your Code Produced:
+// Dish:  Italian pasta Price: $ 9.55\nDish:  Rice with veggies Price: $ 8.65\nDish:  Chicken with potatoes Price: $ 15.55\nDish:  Vegetarian Pizza Price: $ 6.45\nDiscount is: $5\nExpected Output Is:
+// Dish: Italian pasta Price: $9.55
+// Dish: Rice with veggies Price: $8.65
+// Dish: Chicken with potatoes Price: $15.55
+// Dish: Vegetarian Pizza Price: $6.45
+// Discount is: $5
 
-process.stdin.on('end', function() {
-    inputString = inputString.split('\n');
+// FAILED Test Case: getDiscount method when tax is not applied and guests more than 5
+// Your Code Produced:
+// Dish:  Italian pasta Price: $ 9.55\nDish:  Rice with veggies Price: $ 8.65\nDish:  Chicken with potatoes Price: $ 15.55\nDish:  Vegetarian Pizza Price: $ 6.45\nDiscount is: $10\nExpected Output Is:
+// Dish: Italian pasta Price: $9.55
+// Dish: Rice with veggies Price: $8.65
+// Dish: Chicken with potatoes Price: $15.55
+// Dish: Vegetarian Pizza Price: $6.45
+// Discount is: $10
 
-    main();
-});
-
-function readLine() {
-    return inputString[currentLine++];
-}
-
-/*
- * Complete the 'pickingNumbers' function below.
- *
- * The function is expected to return an INTEGER.
- * The function accepts INTEGER_ARRAY a as parameter.
- */
-
-function pickingNumbers(a) {
-    console.log(a);
-
-    a = a.sort( (a,b) => { return a-b})
-    console.log(a);
-
-    var longArr=[];
-    for ( var i = 0; i < a.length; i++) {
-        var arr = a.filter((num)=>{
-            if((num-a[i])==1||(num-a[i])==0){
-                return num
-            }
-        })
-        
-        console.log(arr)
-
-        longArr.push(arr.length)
-    }
-    console.log(longArr);
-
-    longArr.sort((a,b)=>{
-        return b-a
-    })
-    console.log(longArr[0]);
-
-    return longArr[0]
-}
-
-function main() {
-    const ws = fs.createWriteStream(process.env.OUTPUT_PATH);
-
-    const n = parseInt(readLine().trim(), 10);
-
-    const a = readLine().replace(/\s+$/g, '').split(' ').map(aTemp => parseInt(aTemp, 10));
-
-    const result = pickingNumbers(a);
-
-    ws.write(result + '\n');
-
-    ws.end();
-}
+// FAILED Test Case: getDiscount method logs expected error message when guests count not in range
+// Your Code Produced:
+// Dish:  Italian pasta Price: $ 11.46\nDish:  Rice with veggies Price: $ 10.38\nDish:  Chicken with potatoes Price: $ 18.66\nDish:  Vegetarian Pizza Price: $ 7.74\nThe second argument must be a number between 0 and 30\nExpected Output Is:
+// Dish: Italian pasta Price: $11.46
+// Dish: Rice with veggies Price: $10.38
+// Dish: Chicken with potatoes Price: $18.66
+// Dish: Vegetarian Pizza Price: $7.74
+// The second argument must be a number between 0 and 30

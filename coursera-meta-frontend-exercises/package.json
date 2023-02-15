@@ -1,0 +1,15 @@
+{
+  "name": "coursera-meta-frontend-exercises",
+  "version": "1.0.0",
+  "description": "",
+  "main": "c2-w2-defensive-programming.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.4.2"
+  }
+}
